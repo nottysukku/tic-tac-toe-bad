@@ -74,9 +74,9 @@ h1{
   align-items: center;
   justify-content: center;
   height: 40vh;
-/*  margin-top: 50px; /* Adjust to provide space for welcome screen */*/
-
+  /*  margin-top: 50px; /* Adjust to provide space for welcome screen */*/
 }
+
 
 .parent-box {
   height: 300px;
@@ -263,7 +263,22 @@ margin: 0 10px;
   background-color: rgba(127,0,255,0.5);
 }
 
-
+.goback{
+  margin-top: 50px;
+  background-color: rgb(0, 255, 217);
+  border-radius: 10px;
+  border:2px solid black;
+  position: relative;
+  padding: 10px;
+  font-weight: bold;
+}
+.goback:hover{
+  background-color: rgba(0, 255, 221, 0.5);
+cursor: pointer;
+}
+.goback:active{
+  background-color: rgba(231, 190, 190, 0.7);
+}
 
 @media(max-width: 768px) {
   .parent-box {
@@ -300,8 +315,3 @@ margin-top: 55px;
   }
 
 }
-
-
-
-
-

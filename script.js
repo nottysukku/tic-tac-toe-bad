@@ -3,6 +3,8 @@ console.log("Hello Fellow DEV!");
 let col1 = null;
 let col2 = null;
 
+let goback = document.querySelector(".goback");
+
 let color1 = document.querySelector(".colorselect11");
 let color2 = document.querySelector(".colorselect12");
 let color3 = document.querySelector(".colorselect13");
@@ -283,3 +285,7 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.reload();
     });
 });
+
+
+goback.addEventListener("click", function() {
+    window.location.href="https://game-site-orpin.vercel.app/";});

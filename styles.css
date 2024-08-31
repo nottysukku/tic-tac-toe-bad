@@ -1,4 +1,3 @@
-/* Global styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,312 +5,238 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  
-  background-image: linear-gradient(to bottom right, black, hsl(186 100% 69%),black);
-
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #01030b 0%, #1372e7 100%);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 170vh;
-  flex-direction: column;
-  margin: 0;
 }
 
-/* Welcome screen */
+.container {
+  background-color: rgba(202, 194, 194, 0.9);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 90%;
+}
+
 .welcome-screen {
-  position: relative;
-  top: 30px;
   text-align: center;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-h1{
-  position: relative;
-  top:28px;
-}
-.welcome-screen h1 {
-  font-size: 1.2em;
-  margin-bottom: 20px;
 }
 
-.welcome-screen img {
-  width: 100px;
+.game-title {
+  font-size: 2.5rem;
+  color: #4a4a4a;
+  margin-bottom: 0.5rem;
+}
+
+.game-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.game-image {
+  width: 150px;
   height: auto;
- position: relative;
- top:28px;
+  margin-bottom: 1.5rem;
 }
 
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
 
-
-.start-button {
-  padding: 10px 20px;
-  font-size: 1.2em;
-  margin-top: 20px;
-
+.start-button, .control-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
   background-color: #4CAF50;
   color: white;
-  border: 2px solid black;
-  cursor: pointer;
+  border: none;
   border-radius: 5px;
-  position: relative;
-  top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.start-button:hover {
+.start-button:hover, .control-button:hover {
   background-color: #45a049;
 }
 
-.start-button:active {
-  background-color: #3e8e41;
+.game-container {
+  display: none;
 }
 
-/* Game board */
-.grandfather-box {
+.scoreboard {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40vh;
-  /*  margin-top: 50px; /* Adjust to provide space for welcome screen */*/
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
 }
 
+.score {
+  text-align: center;
+  flex: 1;
+}
 
-.parent-box {
-  height: 300px;
-  width: 300px;
-  border: 2px solid black;
+.player-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+.score-value {
+  font-size: 2rem;
+  color: #4CAF50;
+}
+
+.game-board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   gap: 10px;
-  padding: 10px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  position:relative;
-  top:100px;
+  margin-bottom: 1.5rem;
 }
 
 .square {
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid black;
+  aspect-ratio: 1;
+  background-color: #f0f0f0;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 3rem;
   cursor: pointer;
-  position: relative;
+  transition: background-color 0.3s ease;
 }
 
 .square:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #e0e0e0;
 }
 
-.square:active {
-  background-color: rgba(0, 0, 0, 0.1);
+.game-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.icon, .icon1 {
-/*  display: none;*/
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.color-selection {
+  margin-top: 2rem;
+  text-align: center;
+  
 }
 
-.circle {
-  height: 50px;
-  width: 50px;
+.color-selection-title {
+  font-size: 1.5rem;
+  color: #4a4a4a;
+  margin-bottom: 1rem;
+}
+
+.player-colors {
+  display: flex;
+  justify-content: space-around;
+}
+
+.player-color p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.color-options {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0);
-}
-
-.cross1, .cross2 {
-  height: 50px;
-  width: 5px;
-  background-color: black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.cross2 {
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-/* Reset button */
-.button-father {
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-bottom: 10px;
-position: relative;
-}
-
-.button {
- padding: 10px 20px;
-  height: 40px;
-  font-size: 1em;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: 1px solid black;
   cursor: pointer;
-  border-radius: 5px;
- display: none;
+  transition: transform 0.3s ease;
 }
 
-.button:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+.color-option:hover {
+  transform: scale(1.1);
 }
 
-.button:active {
-  background-color: rgba(255, 255, 255, 1);
+.color-option[data-color="red"] { background-color: #ff4136; }
+.color-option[data-color="blue"] { background-color: #0074D9; }
+.color-option[data-color="green"] { background-color: #2ECC40; }
+.color-option[data-color="yellow"] { background-color: #FFDC00; }
+.color-option[data-color="orange"] { background-color: #FF851B; }
+.color-option[data-color="purple"] { background-color: #B10DC9; }
+
+.custom-popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
 }
 
-
-
-.color-choose{
-  margin-top:150px;
-}
-
-.boxyy{
-  margin-bottom: 20px;
- position: relative;
- left:30px;
-  justify-content: center;
-  display: flex;
-  height:60px;
-  width: 250px;
-  border: 1px solid black;
-    display: flex;
-  align-items: center;
-
-}
-
-
-.color-choose-head{
-  color:rgba(0,0,0,0.7);
-/*  margin-top: 100px;*/
-
-}
-
-
-.colorselect11{
-
-  height: 40px;
-  width: 40px;
-  background-color: red;
-margin: 0 10px;
-}
-
-.colorselect11:active{
-  background-color: rgba(255,0,0,0.5);
-}
-
-
-
-.colorselect12{
-
-  height: 40px;
-  width: 40px;
-  background-color: blue;
-margin: 0 10px;
-}
-.colorselect12:active{
-  background-color: rgba(0,0,255,0.5);
-}
-.colorselect13{
-
-  height: 40px;
-  width: 40px;
-  background-color: green;
-margin: 0 10px;
-}
-.colorselect13:active{
-  background-color: rgba(0,255,0,0.5);
-}
-.colorselect21{
-margin: 0 10px;
-  height: 40px;
-  width: 40px;
-  background-color: yellow;
-}
-.colorselect21:active{
-  background-color: rgba(255,255,0,0.5);
-}
-.colorselect22{
-margin: 0 10px;
-  height: 40px;
-  width: 40px;
-  background-color: orange;
-}
-.colorselect22:active{
-  background-color: rgba(255,165,0,0.5);
-}
-
-.colorselect23{
-margin: 0 10px;
-  height: 40px;
-  width: 40px;
-
-  background-color: violet;
-}
-.colorselect23:active{
-  background-color: rgba(127,0,255,0.5);
-}
-
-.goback{
-  margin-top: 50px;
-  background-color: rgb(0, 255, 217);
+.popup-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
   border-radius: 10px;
-  border:2px solid black;
+  text-align: center;
   position: relative;
-  padding: 10px;
-  font-weight: bold;
-}
-.goback:hover{
-  background-color: rgba(0, 255, 221, 0.5);
-cursor: pointer;
-}
-.goback:active{
-  background-color: rgba(231, 190, 190, 0.7);
 }
 
-@media(max-width: 768px) {
-  .parent-box {
-    height: 200px;
-    width: 200px;
-    margin-bottom: 200px;
-position: relative;
-/*  right: 20px;*/
+.close-popup {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.close-popup:hover,
+.close-popup:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#popupMessage {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
   }
 
-.color-choose{
-  margin-top: 50px;
-}
+  .game-title {
+    font-size: 2rem;
+  }
 
-.h-one,.h-two,img{ 
+  .game-subtitle {
+    font-size: 1rem;
+  }
 
-margin-top: 55px;
+  .button-group {
+    flex-direction: column;
+  }
 
-}
+  .start-button, .control-button {
+    width: 100%;
+  }
 
   .square {
-    height: 50px;
-    width: 50px;
+    font-size: 2rem;
   }
-
-  .circle {
-    height: 30px;
-    width: 30px;
-  }
-
-  .cross1, .cross2 {
-    height: 30px;
-    width: 3px;
-  }
-
 }

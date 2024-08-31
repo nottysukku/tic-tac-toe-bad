@@ -5,50 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tic Tac Toe Game</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Tic_tac_toe.svg/1200px-Tic_tac_toe.svg.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Welcome Screen -->
-  <div class="welcome-screen">
-    <h1 class="h-one">Welcome to Tic Tac Toe!</h1>
-    <h1 class="h-two" style="color:blue">Play couch-side with a Friend, Online, or against a Computer!</h1>
-    <img src="tic_tac_toe_image.png" alt="Tic Tac Toe Image">
-    <button class="start-button" id="start-button-one">Start Game (Couch-Side)</button>
-   
-    <button class="start-button" id="start-button-computer">Start Game (Against Computer)</button>
-  </div>
- <div class="button-father">
-    <div class="button">Restart Game</div>
-  </div>
-  <!-- Game Board -->
-  <div class="grandfather-box">
-    <div class="parent-box">
-      <div class="square one"></div>
-      <div class="square two"></div>
-      <div class="square three"></div>
-      <div class="square four"></div>
-      <div class="square five"></div>
-      <div class="square six"></div>
-      <div class="square seven"></div>
-      <div class="square eight"></div>
-      <div class="square nine"></div>
+  <div class="container">
+    <!-- Welcome Screen -->
+    <div class="welcome-screen">
+      <h1 class="game-title">Tic Tac Toe</h1>
+      <p class="game-subtitle">Play with a friend or challenge the AI!</p>
+      <img src="tic_tac_toe_image.png" alt="Tic Tac Toe Image" class="game-image">
+      <div class="button-group">
+        <button class="start-button" id="start-button-one">Play with Friend</button>
+        <button class="start-button" id="start-button-computer">Play against AI</button>
+      </div>
+    </div>
+
+    <!-- Color Selection -->
+    <div class="color-selection" >
+      <h2 class="color-selection-title">Choose Your Colors</h2>
+      <div class="player-colors">
+        <div class="player-color">
+          <p>Player 1</p>
+          <div class="color-options">
+            <div class="color-option" data-color="red"></div>
+            <div class="color-option" data-color="blue"></div>
+            <div class="color-option" data-color="green"></div>
+          </div>
+        </div>
+        <div class="player-color">
+          <p id="player2-color-name">Player 2</p>
+          <div class="color-options">
+            <div class="color-option" data-color="yellow"></div>
+            <div class="color-option" data-color="orange"></div>
+            <div class="color-option" data-color="purple"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Board -->
+    <div class="game-container" style="display: none;">
+      <div class="scoreboard">
+        <div class="score player1-score">
+          <span class="player-name">Player 1</span>
+          <span class="score-value" id="player1-score">0</span>
+        </div>
+        <div class="score player2-score">
+          <span class="player-name" id="player2-name">Player 2</span>
+          <span class="score-value" id="player2-score">0</span>
+        </div>
+      </div>
+      <div class="game-board">
+        <div class="square" data-index="0"></div>
+        <div class="square" data-index="1"></div>
+        <div class="square" data-index="2"></div>
+        <div class="square" data-index="3"></div>
+        <div class="square" data-index="4"></div>
+        <div class="square" data-index="5"></div>
+        <div class="square" data-index="6"></div>
+        <div class="square" data-index="7"></div>
+        <div class="square" data-index="8"></div>
+      </div>
+      <div class="game-controls">
+        <button class="control-button" id="reset-button">Reset Game</button>
+        <button class="control-button" id="new-game-button">New Game</button>
+      </div>
+    </div>
+
+    <!-- Popup -->
+    <div class="custom-popup" id="customPopup">
+      <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <p id="popupMessage"></p>
+      </div>
     </div>
   </div>
-<div class="color-choose">
-  <p style="text-align: center;">Player 1</p>
- <div class="boxyy">
-   <div class="colorselect11"></div>
-   <div class="colorselect12"></div>
-   <div class="colorselect13"></div>
- </div>
- <p style="text-align: center;">Player 2/Computer</p>
- <div class="boxyy"> 
-     <div class="colorselect21"></div>
-   <div class="colorselect22"></div>
-   <div class="colorselect23"></div>
- </div>
-  <h1 class="color-choose-head">Choose your Colors!</h1>
-</div>
-<div class="goback">Go Back?</div>
+
   <script src="script.js"></script>
 </body>
 </html>

@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const customPopup = document.getElementById('customPopup');
   const popupMessage = document.getElementById('popupMessage');
   const closePopup = document.querySelector('.close-popup');
+  const backhome=document.getElementById('backhome');
   colorSelection.style.display = 'block';
   let currentPlayer = 'X';
   let gameBoard = ['', '', '', '', '', '', '', '', ''];
@@ -256,3 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+backhome.addEventListener('click',()=>{
+  window.location.href = "https://game-site-orpin.vercel.app/";
+})

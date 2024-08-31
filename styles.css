@@ -215,6 +215,18 @@ body {
   margin-top: 10px;
 }
 
+
+.backhome{
+  background-color: blue;
+  position: relative;
+  top: 13px;
+  width: 100%;
+  font-weight: 600;
+}
+.backhome:hover{
+  background-color: #0074D9;
+}
+
 @media (max-width: 480px) {
   .container {
     padding: 1rem;

@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const popupMessage = document.getElementById('popupMessage');
   const closePopup = document.querySelector('.close-popup');
   const backhome=document.getElementById('backhome');
+  const playonline=document.getElementById('.playonline');
+
   colorSelection.style.display = 'block';
   let currentPlayer = 'X';
   let gameBoard = ['', '', '', '', '', '', '', '', ''];
@@ -259,5 +261,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 backhome.addEventListener('click',()=>{
+  window.location.href = "https://game-site-orpin.vercel.app/";
+})
+
+
+playonline.addEventListener('click',()=>{
   window.location.href = "https://game-site-orpin.vercel.app/";
 })

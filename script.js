@@ -266,5 +266,5 @@ backhome.addEventListener('click',()=>{
 
 
 playonline.addEventListener('click',()=>{
-  window.location.href = "https://game-site-orpin.vercel.app/";
+  window.location.href = "https://tic-tac-toe-mp-coral.vercel.app/";
 })
